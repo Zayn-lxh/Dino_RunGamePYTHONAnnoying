@@ -335,18 +335,6 @@ def introscreen():
         clock.tick(FPS)
         if temp_dino.isJumping == False and temp_dino.isBlinking == False:
             gameStart = True
-
-def zone(count=0):
-    while playerDino.score > 100:
-        speed = random.randint(4,10)
-        time = random.randint(7,15)
-        while count > time:
-            gamespeed = speed
-            count += 1
-
-
-
-
 def gameplay():
     global high_score
     gamespeed = 6
