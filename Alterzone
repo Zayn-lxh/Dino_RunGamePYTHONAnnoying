@@ -349,7 +349,7 @@ def zone(count=0):
 
 def gameplay():
     global high_score
-    gamespeed = 5
+    gamespeed = 6
     startMenu = False
     gameOver = False
     gameQuit = False
@@ -359,15 +359,20 @@ def gameplay():
     highsc = Scoreboard(width*0.78)
     counter = 0
     count = 0
-    speed = random.randint(1,12)
+    speedfast = random.randint(10,15)
+    speedslow = random.randint(1,5)
+    decide = random.randint(1,2)
     time = random.randint(10,20)
     while playerDino.score > 100:
         while count < time:
-            gamespeed = speed
+            if decide == 1:
+                gamespeed = speedfast
+            elif decide == 2:
+                gamespeed = speedslow
             count += 1
-    if playerDino.score >500:
+    if playerDino.score > 250:
         gamespeed += 1
-    elif playerDino.score > 1000:
+    elif playerDino.score > 500:
         gamespeed += 1
 
     cacti = pygame.sprite.Group()
